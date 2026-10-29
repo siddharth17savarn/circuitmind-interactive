@@ -147,8 +147,8 @@ export function ChipPackage({ chip }: { chip: ChipId }) {
     }
     if (halo.current) halo.current.rotation.z = t * 0.25 * (chip === "panther" ? 1 : -1);
     haloMat.opacity = (0.15 + e * 0.6) * live.power * (1 - live.dim * 0.5);
-    beamMat.uniforms.uAmt!.value = e * live.power;
-    beamMat.uniforms.uTime!.value = t;
+    beamMat.uniforms["uAmt"]!.value = e * live.power;
+    beamMat.uniforms["uTime"]!.value = t;
   });
 
   const label = CHIPS[chip];
